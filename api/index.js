@@ -9,6 +9,8 @@ const dotenv = require("dotenv");
 const multer = require("multer");
 const path = require("path");
 
+const router = express.router();
+
 // File Uploading using multer
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
@@ -42,9 +44,9 @@ mongoose
 
 // Routes
 
-app.post(()=>{
+router.get("test",(req,res)=>{
   console.log("you got it ");
-})
+});
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
