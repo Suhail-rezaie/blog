@@ -8,6 +8,7 @@ const app = express();
 const dotenv = require("dotenv");
 const multer = require("multer");
 const path = require("path");
+var cors = require('cors')
 
 
 
@@ -47,7 +48,7 @@ mongoose
 app.use("/test",(req,res)=>{
   res.send("it works");
 });
-
+app.use(cors())
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postsRoute);
